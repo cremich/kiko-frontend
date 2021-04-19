@@ -1,4 +1,4 @@
-mame: Pull request
+name: Pull request
 
 on:
   push:
