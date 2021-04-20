@@ -11,7 +11,7 @@
     "@aws-amplify/ui-components": "^1.1.1",
     "aws-amplify": "^3.3.26",
     "buefy": "^0.9.6",
-    "core-js": "^3.6.5",
+    "core-js": "^3.10.2",
     "graphql-tag": "^2.11.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
