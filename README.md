@@ -45,6 +45,12 @@ npm run build
 npm run lint
 ```
 
+### Run tests
+
+```
+npm test
+```
+
 ## 🎉 Usage
 
 ### Connect to your backend
