@@ -60,7 +60,7 @@
 </template>
 <script>
 import { API } from "aws-amplify";
-import { ProcessTestResult } from "@/graphql";
+import { ListPools, ProcessTestResult } from "@/graphql";
 
 export default {
   components: {},
@@ -81,14 +81,7 @@ export default {
   },
   methods: {
     async fetchGroups() {
-      const query = `
-        query listPools {
-          listPools {
-            poolName tenant
-          }
-        }
-      `;
-      const response = await API.graphql({ query });
+      const response = await API.graphql({ query: ListPools });
       this.pools = response.data.listPools;
     },
     async forwardPositiveTestResult() {

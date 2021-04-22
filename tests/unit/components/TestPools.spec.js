@@ -2,6 +2,7 @@ import { render } from "@testing-library/vue";
 import { API } from "aws-amplify";
 
 import TestPools from "@/components/TestPools.vue";
+import { ListPools } from "@/graphql";
 
 jest.mock("aws-amplify", () => {
   return {
@@ -11,10 +12,14 @@ jest.mock("aws-amplify", () => {
   };
 });
 
-describe("TestPools.vue", () => {
+describe("TestPools", () => {
   beforeEach(() => {
-    // Mock for fetch groups
-    API.graphql.mockResolvedValueOnce({ data: { listPools: [] } });
+    API.graphql.mockImplementation((options) => {
+      if (options.query === ListPools) {
+        return Promise.resolve({ data: { listPools: [] } });
+      }
+      throw new Error("Unsupported");
+    });
   });
 
   it("should render the headline", () => {
