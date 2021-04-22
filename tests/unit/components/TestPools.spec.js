@@ -4,13 +4,11 @@ import { API } from "aws-amplify";
 import TestPools from "@/components/TestPools.vue";
 import { ListPools } from "@/graphql";
 
-jest.mock("aws-amplify", () => {
-  return {
-    API: {
-      graphql: jest.fn(),
-    },
-  };
-});
+jest.mock("aws-amplify", () => ({
+  API: {
+    graphql: jest.fn(),
+  },
+}));
 
 describe("TestPools", () => {
   beforeEach(() => {
