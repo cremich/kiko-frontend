@@ -22,6 +22,6 @@ describe("TestPools", () => {
 
   it("should render the headline", () => {
     const { getByText } = render(TestPools);
-    expect(getByText("🧪 Aktive Test-Pools")).toBeInTheDocument();
+    expect(getByText(/Aktive Test-Pools/)).toBeInTheDocument();
   });
 });
