@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "test": "npm run test:unit",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "mock-server": "node mock-server/index.js"
   },
   "dependencies": {
     "@aws-amplify/ui-components": "^1.1.1",
@@ -22,6 +23,7 @@
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "@graphql-tools/schema": "^7.1.4",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/vue": "^5.6.2",
     "@vue/cli-plugin-babel": "^4.5.0",
@@ -31,10 +33,13 @@
     "@vue/cli-service": "^4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.3",
+    "apollo-server": "^2.23.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.25.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.9.0",
+    "express": "^4.17.1",
+    "graphql": "^15.5.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "sass": "^1.32.11",
