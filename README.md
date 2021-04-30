@@ -59,6 +59,14 @@ This will run the tests and also collect the test coverage. This task will fail 
 npm run test:coverage
 ```
 
+### Analyze JS bundle size
+
+```
+npm run analyze
+```
+
+This will create two HTML bundle reports located in `dist/` -- `dist/report.html` and `dist/legacy-report.html` -- which can simply be opened in the browser.
+
 ## 🎉 Usage
 
 ### Connect to your backend
