@@ -8,7 +8,8 @@
     "test": "npm run test:unit",
     "test:coverage": "npm run test:unit -- --coverage",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "codecov": "codecov -f coverage/lcov.info"
   },
   "dependencies": {
     "@aws-amplify/ui-components": "^1.1.1",
@@ -33,6 +34,7 @@
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
+    "codecov": "^3.8.1",
     "eslint": "^7.25.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.9.0",
