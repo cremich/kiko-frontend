@@ -51,6 +51,14 @@ npm run lint
 npm test
 ```
 
+### Run tests with coverage
+
+This will run the tests and also collect the test coverage. This task will fail if the coverage is below a defined threshhold (configured in `jest.config.js`).
+
+```
+npm run test:coverage
+```
+
 ## 🎉 Usage
 
 ### Connect to your backend
