@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --modern",
     "test": "npm run test:unit",
     "test:coverage": "npm run test:unit -- --coverage",
     "test:unit": "vue-cli-service test:unit",
+    "analyze": "npm run build -- --report",
     "lint": "vue-cli-service lint",
     "codecov": "codecov -f coverage/lcov.info --disable=gcov"
   },
