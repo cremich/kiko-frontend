@@ -20,7 +20,7 @@ describe("TestPools", () => {
     });
   });
 
-  it("should render the headline", () => {
+  it("should render the headline", async () => {
     const { getByText } = render(TestPools);
     expect(getByText(/Aktive Test-Pools/)).toBeInTheDocument();
   });

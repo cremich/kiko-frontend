@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test": "npm run test:unit",
+    "test:coverage": "npm run test:unit -- --coverage",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -43,7 +44,7 @@
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
-    "pre-push": "npm test"
+    "pre-push": "npm run test:coverage"
   },
   "lint-staged": {
     "*.{js,jsx,vue}": [
