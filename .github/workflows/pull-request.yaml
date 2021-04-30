@@ -31,4 +31,4 @@ jobs:
       - name: Check code style
         run: npm run lint
       - name: Test
-        run: npm test
+        run: npm run test:coverage
