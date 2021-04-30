@@ -1,17 +1,16 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import Buefy from "buefy";
-import "./assets/scss/kiko.scss";
 import { applyPolyfills, defineCustomElements } from "@aws-amplify/ui-components/loader";
 import { AuthErrorStrings } from "@aws-amplify/auth";
 import { Amplify } from "aws-amplify";
 import { I18n } from "aws-amplify";
 import { Translations } from "@aws-amplify/ui-components";
-import "@fortawesome/fontawesome-free/css/all.css";
-import "@fortawesome/fontawesome-free/js/all.js";
+import { Snackbar, Navbar, Button, Modal } from "buefy";
 
 import aws_exports from "./aws-exports";
+
+import "./assets/scss/kiko.scss";
 
 Vue.config.productionTip = false;
 
@@ -41,9 +40,12 @@ I18n.putVocabulariesForLanguage("de", {
   [AuthErrorStrings.EMPTY_CODE]: "Der Verifizierungs Code dar nicht leer sein",
 });
 
+Vue.use(Navbar);
+Vue.use(Button);
+Vue.use(Modal);
+Vue.use(Snackbar);
+
 new Vue({
   router,
   render: (h) => h(App),
 }).$mount("#app");
-
-Vue.use(Buefy);
