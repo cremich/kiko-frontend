@@ -13,12 +13,12 @@
     "codecov": "codecov -f coverage/lcov.info --disable=gcov"
   },
   "dependencies": {
-    "@aws-amplify/api": "^3.2.30",
+    "@aws-amplify/api-graphql": "^1.2.30",
     "@aws-amplify/auth": "^3.4.30",
     "@aws-amplify/core": "^3.8.22",
     "@aws-amplify/interactions": "^3.3.30",
     "@aws-amplify/storage": "^3.4.0",
-    "@aws-amplify/ui-components": "^1.1.1",
+    "@aws-amplify/ui-components": "^1.2.0",
     "buefy": "^0.9.6",
     "core-js": "^3.11.1",
     "graphql-tag": "^2.12.4",

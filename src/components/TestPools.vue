@@ -59,7 +59,7 @@
   </section>
 </template>
 <script>
-import { API } from "@aws-amplify/api";
+import { GraphQLAPI as API } from "@aws-amplify/api-graphql";
 import { ListPools, ProcessTestResult } from "@/graphql";
 
 export default {
