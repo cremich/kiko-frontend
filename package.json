@@ -9,7 +9,7 @@
     "test:coverage": "npm run test:unit -- --coverage",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "codecov": "codecov -f coverage/lcov.info"
+    "codecov": "codecov -f coverage/lcov.info --disable=gcov"
   },
   "dependencies": {
     "@aws-amplify/ui-components": "^1.1.1",
