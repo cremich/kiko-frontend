@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { Hub } from "aws-amplify";
+import { Hub } from "@aws-amplify/core";
 
 export default {
   name: "app",

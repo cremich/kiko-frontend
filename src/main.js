@@ -1,13 +1,14 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
-import { applyPolyfills, defineCustomElements } from "@aws-amplify/ui-components/loader";
+
 import { AuthErrorStrings } from "@aws-amplify/auth";
-import { Amplify } from "aws-amplify";
-import { I18n } from "aws-amplify";
+import { Amplify, I18n } from "@aws-amplify/core";
 import { Translations } from "@aws-amplify/ui-components";
+import { applyPolyfills, defineCustomElements } from "@aws-amplify/ui-components/loader";
+
 import { Snackbar, Navbar, Button, Modal } from "buefy";
 
+import router from "./router";
 import aws_exports from "./aws-exports";
 
 import "./assets/scss/kiko.scss";
