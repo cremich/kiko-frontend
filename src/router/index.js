@@ -1,8 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+
+import { Auth } from "@aws-amplify/auth";
+
 import AuthLayout from "../layout/AuthLayout";
 import Login from "../views/Login";
-import { Auth } from "@aws-amplify/auth";
 import DashboardLayout from "../layout/DashboardLayout";
 import Dashboard from "../views/Dashboard";
 

@@ -1,11 +1,11 @@
 import { render } from "@testing-library/vue";
-import { API } from "@aws-amplify/api";
+import { GraphQLAPI as API } from "@aws-amplify/api-graphql";
 
 import TestPools from "@/components/TestPools.vue";
 import { ListPools } from "@/graphql";
 
-jest.mock("@aws-amplify/api", () => ({
-  API: {
+jest.mock("@aws-amplify/api-graphql", () => ({
+  GraphQLAPI: {
     graphql: jest.fn(),
   },
 }));
