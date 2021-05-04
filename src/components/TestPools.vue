@@ -26,30 +26,15 @@
           <p class="card-header-title">Ein kurzer Hinweis!</p>
         </header>
 
-        <div class="card-content has-background-danger has-text-white" v-if="activeTestResult === 'P'">
+        <div class="card-content has-text-white" v-bind:class="testResultBackground">
           <div class="content has-text-centered">
             <p class="is-size-1 is-uppercase">&#x261D;️ Achtung!</p>
             <p>
-              Die Übermittlung eines <span class="has-text-weight-bold">positiven Testergebnisses</span> löst eine
-              automatische Benachrichtigung an die Empfänger des Test-Pools aus. Bist du sicher?
+              Die Übermittlung des <span class="has-text-weight-bold">Testergebnisses</span> löst eine automatische
+              Benachrichtigung an die Empfänger des Test-Pools aus. Bist du sicher?
             </p>
             <div class="buttons is-centered">
-              <b-button @click="forwardPositiveTestResult">Ja, Testergebnis protokollieren</b-button>
-              <b-button type="is-light" outlined @click="closeModal">Nein, Dialog schließen</b-button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-content has-background-info has-text-white" v-if="activeTestResult === 'N'">
-          <div class="content has-text-centered">
-            <p class="is-size-1 is-uppercase">&#x261D;️ Achtung!</p>
-            <p>
-              Ein <span class="has-text-weight-bold">negatives Testergebnis</span> wird nicht automatisch an die
-              Empfänger des Test-Pools weitergeleitet. Dennoch wird das Testergebnis zu Dokumentationszwecken
-              protokolliert. Bist du sicher?
-            </p>
-            <div class="buttons is-centered">
-              <b-button @click="logNegativeTestResult">Ja, Testergebnis protokollieren</b-button>
+              <b-button @click="forwardTestResult">Ja, Testergebnis weiterleiten</b-button>
               <b-button type="is-light" outlined @click="closeModal">Nein, Dialog schließen</b-button>
             </div>
           </div>
@@ -70,35 +55,28 @@ export default {
       activePool: {},
       activeTestResult: "",
       confirmModal: false,
-      alert: {
-        active: false,
-        dismissible: false,
-        type: "default",
-        message: "",
-        strong: "",
-      },
     };
+  },
+  computed: {
+    testResultBackground: function () {
+      return {
+        "has-background-danger": this.activeTestResult === "P",
+        "has-background-success": this.activeTestResult === "N",
+      };
+    },
   },
   methods: {
     async fetchGroups() {
       const response = await API.graphql({ query: ListPools });
       this.pools = response.data.listPools;
     },
-    async forwardPositiveTestResult() {
+    async forwardTestResult() {
       await API.graphql({
         query: ProcessTestResult,
-        variables: { input: { poolName: this.activePool.poolName, testResult: "P" } },
+        variables: { input: { poolName: this.activePool.poolName, testResult: this.activeTestResult } },
       });
       this.confirmModal = false;
       this.$buefy.snackbar.open(`Super! Das Testergebnis wurde erfolgreich weitergeleitet`);
-    },
-    async logNegativeTestResult() {
-      await API.graphql({
-        query: ProcessTestResult,
-        variables: { input: { poolName: this.activePool.poolName, testResult: "N" } },
-      });
-      this.confirmModal = false;
-      this.$buefy.snackbar.open(`Prima! Das Testergebnis wurde protokolliert`);
     },
     closeModal() {
       this.activePool = {};
