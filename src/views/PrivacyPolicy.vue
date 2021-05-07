@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="container">
-      <router-link to="dashboard">&larr; zurück</router-link>
+      <router-link to="/dashboard">&larr; zurück</router-link>
       <h2 class="subtitle is-2 has-text-weight-light">Datenschutzhinweise</h2>
       <p>
         Im Zuge der Einführung der Lollipop-Tests in unserer Einrichtung, werden wir Ihre Handynummer die Sie zwecks
