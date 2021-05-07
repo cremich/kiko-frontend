@@ -5,6 +5,7 @@ module.exports = {
   setupFilesAfterEnv: ["<rootDir>/tests/setup.js"],
   coverageReporters: ["lcovonly", "text"],
   coveragePathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/src/graphql"],
+  testMatch: ["**/tests/**/*.test.js"],
   coverageThreshold: {
     global: {
       branches: coverageThreshhold,
