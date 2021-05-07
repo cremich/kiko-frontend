@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar>
+    <b-navbar :mobile-burger="isAuthenticated">
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ path: '/' }">
           <span class="is-size-4 has-text-weight-light">&#x1F52C; KIKO APP</span>
@@ -8,10 +8,10 @@
       </template>
       <template #start> </template>
 
-      <template #end>
-        <b-navbar-item tag="div" v-if="user.attributes">
+      <template #end v-if="userAttributes">
+        <b-navbar-item tag="div">
           <small
-            >Angemeldet als <strong>{{ user.attributes.email }}</strong></small
+            >Angemeldet als <strong>{{ userAttributes.email }}</strong></small
           >
         </b-navbar-item>
         <b-navbar-item tag="div">
@@ -33,13 +33,21 @@ export default {
   components: {},
   data() {
     return {
-      user: {},
+      user: null,
     };
   },
+  computed: {
+    isAuthenticated: (self) => self.user !== null,
+    userAttributes: (self) => self.user && self.user.attributes,
+  },
   beforeCreate() {
-    Auth.currentAuthenticatedUser().then((user) => {
-      this.user = user;
-    });
+    Auth.currentAuthenticatedUser()
+      .then((user) => {
+        this.user = user;
+      })
+      .catch(() => {
+        this.user = null;
+      });
   },
   methods: {
     async signOut() {

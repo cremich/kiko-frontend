@@ -5,6 +5,7 @@
     </main>
     <footer class="footer">
       <div class="content has-text-centered">
+        <p><router-link to="/privacy-policy">Datenschutzheinweise</router-link></p>
         <p>
           <strong>&copy; {{ year }}</strong> by <a href="https://cremich.dev">cremich.dev</a>. The source code is
           licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. View on
@@ -16,25 +17,12 @@
 </template>
 
 <script>
-import { Hub } from "@aws-amplify/core";
-
 export default {
   name: "app",
   data() {
     return {
       year: new Date().getFullYear(),
     };
-  },
-  beforeCreate() {
-    Hub.listen("auth", (data) => {
-      const { payload } = data;
-      if (payload.event === "signIn") {
-        this.$router.push("/dashboard");
-      }
-      if (payload.event === "signOut") {
-        this.$router.push("/auth/login");
-      }
-    });
   },
 };
 </script>

@@ -1,11 +1,11 @@
 import Vue from "vue";
 
-import { Amplify, I18n } from "@aws-amplify/core";
+import { Amplify, Hub, I18n } from "@aws-amplify/core";
 import { AuthErrorStrings } from "@aws-amplify/auth";
 import { Translations } from "@aws-amplify/ui-components";
 import { applyPolyfills, defineCustomElements } from "@aws-amplify/ui-components/loader";
 
-import { Snackbar, Navbar, Button, Modal } from "buefy";
+import { Button, Modal, Navbar, Snackbar } from "buefy";
 
 import App from "./App.vue";
 import router from "./router";
@@ -45,6 +45,16 @@ Vue.use(Navbar);
 Vue.use(Button);
 Vue.use(Modal);
 Vue.use(Snackbar);
+
+Hub.listen("auth", (data) => {
+  const { payload } = data;
+  if (payload.event === "signIn") {
+    router.push("/dashboard");
+  }
+  if (payload.event === "signOut") {
+    router.push("/auth/login");
+  }
+});
 
 new Vue({
   router,
