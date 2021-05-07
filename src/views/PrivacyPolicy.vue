@@ -1,8 +1,8 @@
 <template>
   <section class="section">
     <div class="container">
-      <router-link to="dashboard">&larr; zur Übersicht</router-link>
-      <h2 class="subtitle is-2 has-text-weight-light">Datenschutzvereinbarungen</h2>
+      <router-link to="dashboard">&larr; zurück</router-link>
+      <h2 class="subtitle is-2 has-text-weight-light">Datenschutzhinweise</h2>
       <p>
         Im Zuge der Einführung der Lollipop-Tests in unserer Einrichtung, werden wir Ihre Handynummer die Sie zwecks
         Kontaktaufnahme bei uns hinterlegt haben, in unser System zur automatischen Weiterleitung der
@@ -20,9 +20,19 @@
         werden Ihre Daten automatisch gelöscht. Sie haben jederzeit die Möglichkeit der Verwendung zu widersprechen.
         Bitte wenden Sie sich hierzu oder bei weiteren Fragen an die KiTa Leitung."
       </p>
+      <div>
+        <b-button @click="() => {}">&#x1F5A8; Drucken</b-button>
+      </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  name: "privacy-policy",
+  components: {},
+};
+</script>
 
 <style lang="scss">
 section {
