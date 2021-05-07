@@ -1,6 +1,17 @@
 <template>
-  <div id="app" class="has-background-light">
-    <router-view />
+  <div id="app">
+    <main class="has-background-light">
+      <router-view />
+    </main>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>&copy; {{ year }}</strong> by <a href="https://cremich.dev">cremich.dev</a>. The source code is
+          licensed under <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. View on
+          <a href="https://github.com/cremich/kiko-backend">GitHub</a>.
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -9,6 +20,11 @@ import { Hub } from "@aws-amplify/core";
 
 export default {
   name: "app",
+  data() {
+    return {
+      year: new Date().getFullYear(),
+    };
+  },
   beforeCreate() {
     Hub.listen("auth", (data) => {
       const { payload } = data;
@@ -23,8 +39,16 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  // We have to define a flex-basis height in order for child elements to be 100% height.
+  // https://github.com/philipwalton/flexbugs/issues/197
+  & > main {
+    flex: 1 0 0;
+  }
 }
 </style>
