@@ -4,7 +4,7 @@ module.exports = {
   preset: "@vue/cli-plugin-unit-jest",
   setupFilesAfterEnv: ["<rootDir>/tests/setup.js"],
   coverageReporters: ["lcovonly", "text"],
-  coveragePathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/src/graphql"],
+  coveragePathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/src/graphql", "<rootDir>/tests/utils"],
   testMatch: ["**/tests/**/*.test.js"],
   coverageThreshold: {
     global: {

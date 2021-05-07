@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <b-modal v-model="confirmModal" @cancel="closeModal" custom-class="p-4">
+    <b-modal :active="confirmModal" @cancel="closeModal" custom-class="p-4">
       <div class="card">
         <header class="card-header">
           <p class="card-header-title">Ein kurzer Hinweis!</p>
