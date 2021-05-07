@@ -37,8 +37,12 @@ export default {
     };
   },
   computed: {
-    isAuthenticated: (self) => self.user !== null,
-    userAttributes: (self) => self.user && self.user.attributes,
+    isAuthenticated() {
+      return this.user !== null;
+    },
+    userAttributes() {
+      return this.user && this.user.attributes;
+    },
   },
   beforeCreate() {
     Auth.currentAuthenticatedUser()

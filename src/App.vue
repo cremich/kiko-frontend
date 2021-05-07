@@ -3,7 +3,7 @@
     <main class="has-background-light">
       <router-view />
     </main>
-    <footer class="footer">
+    <footer class="footer is-hidden-print">
       <div class="content has-text-centered">
         <p><router-link to="/privacy-policy">Datenschutzheinweise</router-link></p>
         <p>

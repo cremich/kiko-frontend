@@ -18,10 +18,10 @@
       <p>
         Das System wird nur für die Dauer der Durchführung der Lollipop-Tests verwende. Nach Abschaltung des Systems
         werden Ihre Daten automatisch gelöscht. Sie haben jederzeit die Möglichkeit der Verwendung zu widersprechen.
-        Bitte wenden Sie sich hierzu oder bei weiteren Fragen an die KiTa Leitung."
+        Bitte wenden Sie sich hierzu oder bei weiteren Fragen an die KiTa Leitung.
       </p>
       <div>
-        <b-button @click="() => {}">&#x1F5A8; Drucken</b-button>
+        <b-button @click="print">&#x1F5A8; Drucken</b-button>
       </div>
     </div>
   </section>
@@ -31,6 +31,11 @@
 export default {
   name: "privacy-policy",
   components: {},
+  methods: {
+    print() {
+      window.print();
+    },
+  },
 };
 </script>
 

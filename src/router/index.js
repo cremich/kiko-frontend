@@ -33,7 +33,7 @@ const routes = [
     component: DashboardLayout,
     children: [
       {
-        path: "/privacy-policy",
+        path: "/",
         name: "privacy-policy",
         components: { default: PrivacyPolicy },
         meta: {

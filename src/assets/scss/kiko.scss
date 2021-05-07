@@ -7,3 +7,22 @@ $footer-padding: 1rem;
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
+// Fix full height apps in Mobile Safari
+// https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/
+html {
+  min-height: -webkit-fill-available;
+}
+
+body {
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+@media print {
+  a,
+  button,
+  .is-hidden-print {
+    display: none !important;
+  }
+}
+
