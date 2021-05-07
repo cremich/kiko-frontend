@@ -21,6 +21,13 @@ TODO: sample screenshots
 
 ## 🚀 Getting Started
 
+### Prerequisites
+
+- Node.js v14 (LTS)
+- npm v6 (bundled with node.js)
+
+If you are using [nvm](https://github.com/nvm-sh/nvm) you can simply run `nvm install && nvm use` to install the correct version of `node` and `npm`.
+
 ### Project setup
 
 ```
