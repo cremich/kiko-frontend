@@ -17,7 +17,10 @@ The lollipop method is a non-invasive method of sample collection. In this metho
 
 The KIKO-App is a serverless software solution running on AWS. It aims to support institutions like Kindergarten or schools to implement the pool testing in their environments. The KIKO-App supports to document test results and forward positive test results to the participants or their representatives.
 
-TODO: sample screenshots
+![Login](./docs/login.png)
+![Dashboard](./docs/dashboard.png)
+![Negatives Testergebnis](./docs/negative_test_result.png)
+![Positives Testergebnis](./docs/positive_test_result.png)
 
 ## 🚀 Getting Started
 
