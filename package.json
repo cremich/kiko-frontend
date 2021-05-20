@@ -17,7 +17,7 @@
     "@aws-amplify/auth": "^3.4.30",
     "@aws-amplify/core": "^3.8.22",
     "@aws-amplify/interactions": "^3.3.30",
-    "@aws-amplify/storage": "^3.4.0",
+    "@aws-amplify/storage": "^4.0.0",
     "@aws-amplify/ui-components": "^1.2.0",
     "buefy": "^0.9.6",
     "core-js": "^3.11.1",
@@ -45,7 +45,7 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "sass": "^1.32.12",
-    "sass-loader": "^10.1.1",
+    "sass-loader": "^10.2.0",
     "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {
