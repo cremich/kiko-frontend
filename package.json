@@ -41,7 +41,7 @@
     "codecov": "^3.8.2",
     "eslint": "^7.26.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.9.0",
+    "eslint-plugin-vue": "^7.10.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.0",
     "sass": "^1.32.13",
